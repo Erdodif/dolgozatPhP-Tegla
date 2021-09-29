@@ -3,6 +3,7 @@
 }
 body{
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: white;
 }
 form{
@@ -36,4 +37,19 @@ input[type="submit"]{
 input[type="submit"]:hover{
     background: rgb(226, 220, 137);
     color: rgb(92, 92, 92);
+}
+.eredmenyek{
+    background-color: rgb(251, 245, 207);
+    width: min(100%, 15rem);
+    margin-inline: auto;
+    text-align: center;
+}
+.eredmenyek > p:first-child{
+    font-size: 1.2em;
+    font-weight: bold;
+    background: wheat;
+    padding-block-start: 1em;
+}
+.eredmenyek > p{
+    padding-block-end: .6em;
 }

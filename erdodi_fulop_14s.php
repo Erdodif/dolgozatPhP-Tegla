@@ -4,6 +4,7 @@
     $elkuldve = isset($_POST["kuldve"]);
     $hibaA = false;
     $hibaB = false;
+
     function hibauzenetKreator($oldal){
         if($oldal === ""){
             return "Meg kell adni az a oldalt!";
@@ -15,15 +16,26 @@
             return "Az oldal hossza nullánál nagyobbnak kell lennie!";
         }
     }
+
     function vanhiba($oldal){
         if ($oldal === "" || !is_numeric($oldal) || $oldal == 0){
             return true;
         }
         return false;
     }
+
     function ki($uzenet){
         return htmlspecialchars($uzenet,ENT_QUOTES);
     }
+
+    function terulet($a,$b){
+        return $a * $b;
+    }
+
+    function kerulet($a,$b){
+        return ($a + $b) * 2;
+    }
+
     if ($elkuldve){
         $hibaA = vanhiba($oldalA);
         $hibaB = vanhiba($oldalB);
@@ -64,7 +76,11 @@
         <input type="submit" value="feldolgoz">
         <input name="kuldve" value="true" hidden>
     </form>
-    <p><?php echo $mindenrendben?"Sikeres":""?></p>
+    <div class="eredmenyek" <?php echo $mindenrendben?"":"hidden"?>>
+        <p><?php echo $mindenrendben?"Sikeres":""?></p>
+        <p><?php echo $mindenrendben?("Kerület: ".kerulet($oldalA,$oldalB)."px"):""?></p>
+        <p><?php echo $mindenrendben?("Terület: ".terulet($oldalA,$oldalB)."px<sup>2</sup>"):""?></p>
+    </div>
 </body>
 </html>
 <!--
@@ -84,6 +100,6 @@ OSZTÁLYOM: 14S
  - sikertelen validáció esetén a form-ba töltsük vissza az adatokat 1 pont/1 pont
  
 3. feladatrész:
- - sikeres az eredmény kiíratása: 3 pont/x pont
- - helyesen számoltad a kerületet, területet: 1 pont/x pont
+ - sikeres az eredmény kiíratása: 3 pont/3 pont
+ - helyesen számoltad a kerületet, területet: 1 pont/1 pont
 -->
