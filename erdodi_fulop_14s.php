@@ -34,6 +34,7 @@
             $uzenetB = hibauzenetKreator($oldalB);
         }
     }
+    $mindenrendben = !$hibaA && !$hibaB && $elkuldve;
 ?>
 <!DOCTYPE html>
 <html>
@@ -63,6 +64,7 @@
         <input type="submit" value="feldolgoz">
         <input name="kuldve" value="true" hidden>
     </form>
+    <p><?php echo $mindenrendben?"Siker":""?></p>
 </body>
 </html>
 <!--
@@ -76,10 +78,10 @@ OSZTÁLYOM: 14S
  
 2. feladatrész:
  - csak akkor fut le a kód, ha a formot elküldted 1 pont/1 pont
- - elkészültek a validációk  3 pont/x pont
- - hibaüzenet csak akkor jelenjen meg, ha ténylegesen is történt validációs hiba 1 pont/x pont
- - a "Sikeres" üzenet csak akkor jelenjen meg, ha nincs hiba. Ekkor a form ne jelenjen meg. 1 pont/x pont
- - sikertelen validáció esetén a form-ba töltsük vissza az adatokat 1 pont/x pont
+ - elkészültek a validációk  3 pont/3 pont
+ - hibaüzenet csak akkor jelenjen meg, ha ténylegesen is történt validációs hiba 1 pont/1 pont
+ - a "Sikeres" üzenet csak akkor jelenjen meg, ha nincs hiba. Ekkor a form ne jelenjen meg. 1 pont/1 pont
+ - sikertelen validáció esetén a form-ba töltsük vissza az adatokat 1 pont/1 pont
  
 3. feladatrész:
  - sikeres az eredmény kiíratása: 3 pont/x pont
