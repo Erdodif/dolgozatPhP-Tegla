@@ -64,7 +64,7 @@
         <input type="submit" value="feldolgoz">
         <input name="kuldve" value="true" hidden>
     </form>
-    <p><?php echo $mindenrendben?"Siker":""?></p>
+    <p><?php echo $mindenrendben?"Sikeres":""?></p>
 </body>
 </html>
 <!--

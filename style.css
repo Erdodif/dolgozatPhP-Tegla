@@ -1,3 +1,39 @@
 .hibauzenet{
     color:red;
 }
+body{
+    margin: 0;
+    background-color: white;
+}
+form{
+    width: min(100%,30rem);
+    margin-block: 2em;
+    margin-inline: auto;
+    text-align: center;
+    background-color: rgb(251, 245, 207);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+form > div{
+    margin-block: 1em;
+}
+form > div > label *{
+    margin-block: .6em;
+}
+input[type="submit"]{
+    background: rgb(116, 116, 116);
+    color: white;
+    font-weight: bold;
+    text-transform: capitalize;
+    width: min(100%,10rem);
+    margin-inline: auto;
+    margin-block-end: 1.6em;
+    border-radius: 100vw;
+    padding: .5em;
+    border: unset;
+}
+input[type="submit"]:hover{
+    background: rgb(226, 220, 137);
+    color: rgb(92, 92, 92);
+}
