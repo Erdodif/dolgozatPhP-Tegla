@@ -11,8 +11,8 @@
         if (!is_numeric($oldal)){
             return "Az oldal hosszának számnak kell lennie!";
         }
-        if ($oldal == 0){
-            return "Az oldal hossza nem lehet nulla!";
+        if ($oldal <= 0){
+            return "Az oldal hossza nullánál nagyobbnak kell lennie!";
         }
     }
     function vanhiba($oldal){
@@ -49,14 +49,14 @@
         <div>
             <label>
                 A téglalap egyik oldala: <br />
-                <input type='text' name='oldal_a' value="<?php ki($oldalA)?>">
+                <input type='text' name='oldal_a' value="<?php echo ki($oldalA);?>">
             </label>
             <div class='hibauzenet'><?php echo $hibaA?$uzenetA:"";?></div>
         </div>
         <div>
             <label>
                 A téglalap másik oldala: <br />
-                <input type='text' name='oldal_b' value="<?php ki($oldalB)?>">
+                <input type='text' name='oldal_b' value="<?php echo ki($oldalB);?>">
             </label>
             <div class='hibauzenet'><?php echo $hibaB?$uzenetB:"";?></div>
         </div>
