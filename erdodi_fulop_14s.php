@@ -49,16 +49,16 @@
         <div>
             <label>
                 A téglalap egyik oldala: <br />
-                <input type='text' name='oldal_a' value="<?ki($oldalA)?>">
+                <input type='text' name='oldal_a' value="<?php ki($oldalA)?>">
             </label>
-            <div class='hibauzenet'><?echo $hibaA?$uzenetA:"";?></div>
+            <div class='hibauzenet'><?php echo $hibaA?$uzenetA:"";?></div>
         </div>
         <div>
             <label>
                 A téglalap másik oldala: <br />
-                <input type='text' name='oldal_b' value="<?ki($oldalB)?>">
+                <input type='text' name='oldal_b' value="<?php ki($oldalB)?>">
             </label>
-            <div class='hibauzenet'><?echo $hibaB?$uzenetB:"";?></div>
+            <div class='hibauzenet'><?php echo $hibaB?$uzenetB:"";?></div>
         </div>
         <input type="submit" value="feldolgoz">
         <input name="kuldve" value="true" hidden>
