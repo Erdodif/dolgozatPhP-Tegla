@@ -4,9 +4,6 @@
     $elkuldve = isset($_POST["kuldve"]);
     $hibaA = false;
     $hibaB = false;
-    $uzenetA = "";
-    $uzenetB = "";
-    $ki= "";
     function hibauzenetKreator($oldal){
         if($oldal === ""){
             return "Meg kell adni az a oldalt!";
@@ -28,7 +25,6 @@
         return htmlspecialchars($uzenet,ENT_QUOTES);
     }
     if ($elkuldve){
-        $ki = "k cs";
         $hibaA = vanhiba($oldalA);
         $hibaB = vanhiba($oldalB);
         if($hibaA){
@@ -46,23 +42,23 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Téglalapos számonkérés</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php echo $ki?>
     <form method="POST">
         <div>
             <label>
                 A téglalap egyik oldala: <br />
-                <input type='text' name='oldal_a'>
+                <input type='text' name='oldal_a' value="<?ki($oldalA)?>">
             </label>
-            <div class='hibauzenet'></div>
+            <div class='hibauzenet'><?echo $hibaA?$uzenetA:"";?></div>
         </div>
         <div>
             <label>
                 A téglalap másik oldala: <br />
-                <input type='text' name='oldal_b'>
+                <input type='text' name='oldal_b' value="<?ki($oldalB)?>">
             </label>
-            <div class='hibauzenet'></div>
+            <div class='hibauzenet'><?echo $hibaB?$uzenetB:"";?></div>
         </div>
         <input type="submit" value="feldolgoz">
         <input name="kuldve" value="true" hidden>
