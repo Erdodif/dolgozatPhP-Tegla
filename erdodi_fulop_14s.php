@@ -7,19 +7,6 @@
     $uzenetA = "";
     $uzenetB = "";
     $ki= "";
-    if ($elkuldve){
-        $ki = "k cs";
-        if($oldalA === ""){
-            $hibaA = true;
-            $uzenetA .= "Meg kell adni az a oldalt!";
-        } elseif (!is_numeric($oldalA)){
-            $hibaA = true;
-            $hibaA .= "Az oldal hosszának számnak kell lennie!";
-        } elseif ($oldalA == 0){
-            $hibaA = true;
-            $hibaA .= "Az oldal hossza nem lehet nulla!";
-        }
-    }
     function hibauzenetKreator($oldal){
         if($oldal === ""){
             return "Meg kell adni az a oldalt!";
@@ -36,6 +23,20 @@
             return true;
         }
         return false;
+    }
+    function ki($uzenet){
+        return htmlspecialchars($uzenet,ENT_QUOTES);
+    }
+    if ($elkuldve){
+        $ki = "k cs";
+        $hibaA = vanhiba($oldalA);
+        $hibaB = vanhiba($oldalB);
+        if($hibaA){
+            $uzenetA = hibauzenetKreator($oldalA);
+        }
+        if($hibaB){
+            $uzenetB = hibauzenetKreator($oldalB);
+        }
     }
 ?>
 <!DOCTYPE html>
