@@ -56,22 +56,26 @@
     <title>Téglalapos számonkérés</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="style.css">
+    <script src="brain.js"></script>
 </head>
-<body>
+<body onload="init();">
     <form method="POST">
+        <h2>
+            Téglalap
+        </h2>
         <div>
             <label>
                 A téglalap egyik oldala: <br />
-                <input type='text' name='oldal_a' value="<?php echo ki($oldalA);?>">
+                <input type='text' name='oldal_a' id="bevitel_a" value="<?php echo ki($oldalA);?>" required>
             </label>
-            <div class='hibauzenet'><?php echo $hibaA?$uzenetA:"";?></div>
+            <div class='hibauzenet' id="oldal_a_hiba"><?php echo $hibaA?$uzenetA:"";?></div>
         </div>
         <div>
             <label>
                 A téglalap másik oldala: <br />
-                <input type='text' name='oldal_b' value="<?php echo ki($oldalB);?>">
+                <input type='text' name='oldal_b' id="bevitel_b" value="<?php echo ki($oldalB);?>" required>
             </label>
-            <div class='hibauzenet'><?php echo $hibaB?$uzenetB:"";?></div>
+            <div class='hibauzenet' id ="oldal_b_hiba"><?php echo $hibaB?$uzenetB:"";?></div>
         </div>
         <input type="submit" value="feldolgoz">
         <input name="kuldve" value="true" hidden>
@@ -80,6 +84,8 @@
         <p><?php echo $mindenrendben?"Sikeres":""?></p>
         <p><?php echo $mindenrendben?("Kerület: ".kerulet($oldalA,$oldalB)."px"):""?></p>
         <p><?php echo $mindenrendben?("Terület: ".terulet($oldalA,$oldalB)."px<sup>2</sup>"):""?></p>
+    </div>
+    <div class="tegla" <?php echo $mindenrendben?"style='width: ".$oldalA."px;height: ".$oldalB."px;'":"hidden"?>>
     </div>
 </body>
 </html>
@@ -102,4 +108,9 @@ OSZTÁLYOM: 14S
 3. feladatrész:
  - sikeres az eredmény kiíratása: 3 pont/3 pont
  - helyesen számoltad a kerületet, területet: 1 pont/1 pont
+
+Kiegészítő feladatrészek:
+ - Téglalap kirajzolása ✔ (A méret túl lóghat a kijelző szélességén)
+ - Kliens oldali validáció ✔ (DOMContentLoaded nem működik , onload inline tulajdonsággal oldottam meg)
+ - Oldal formázása ✔ (Reszponzivitás 150px szélességig biztosítva ↹)
 -->

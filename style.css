@@ -53,3 +53,8 @@ input[type="submit"]:hover{
 .eredmenyek > p{
     padding-block-end: .6em;
 }
+.tegla{
+    background: cornflowerblue;
+    margin-inline: auto;
+    margin-block: 2em;
+}
